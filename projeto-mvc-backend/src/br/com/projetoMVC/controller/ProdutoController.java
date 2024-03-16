@@ -9,21 +9,22 @@ import br.com.projetoMVC.model.Produto;
 
 public class ProdutoController {
 
-	public List<Produto> listarTodos(){
+	public List<Produto> listarTodos() {
 		try {
 			GenericDAO dao = new ProdutoDAOImpl();
 			List<Produto> lista = new ArrayList<Produto>();
-			
-			for(Object object : dao.listarTodos()) {
-				lista.add((Produto)object );
+
+			for (Object object : dao.listarTodos()) {
+				lista.add((Produto) object);
 			}
-			
+
 			return lista;
-			
+
 		} catch (Exception ex) {
-			System.out.println("Problemas na Controller para listar Produtos" + ex.getMessage());
+			System.out.println("Problemas na Controller para listar Produtos " + ex.getMessage());
 			ex.printStackTrace();
 			return null;
 		}
 	}
+
 }
